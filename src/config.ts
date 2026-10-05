@@ -21,7 +21,7 @@ export default registerAs(
       db: +(process.env['REDIS_DB'] || 0),
       password: process.env['REDIS_PASSWORD'],
       tls: ['1', 'on', 'true'].includes(process.env['REDIS_TLS'] || '') ? {} : undefined,
-      keyPrefix: process.env['REDIS_PREFIX'] || undefined,
+      keyPrefix: process.env['REDIS_PREFIX'],
       // Let ioredis handle retries globally; set null to bubble up errors in pipelines/blocks as needed
       maxRetriesPerRequest: null,
     }) as RedisOptions,
