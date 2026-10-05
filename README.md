@@ -55,6 +55,9 @@ The module registers a configuration namespace `redis` built from these env vari
 - REDIS_DB (default: 0)
 - REDIS_PASSWORD (optional)
 - REDIS_TLS ("1", "on", or "true" to enable TLS)
+- REDIS_PREFIX (optional): ioredis `keyPrefix`, e.g. `staging:`. Lets several apps or environments share
+  one server that has database 0 only, such as Azure Managed Redis. BullMQ rejects a client with
+  `keyPrefix`: pass the options to BullMQ without it and set BullMQ's own `prefix` instead.
 
 Example .env:
 
@@ -64,6 +67,7 @@ REDIS_PORT=6379
 REDIS_DB=0
 # REDIS_PASSWORD=your_password
 # REDIS_TLS=true
+# REDIS_PREFIX=staging:
 ```
 
 3) Using the ioredis namespace re-export (optional)

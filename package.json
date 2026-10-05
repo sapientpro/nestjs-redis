@@ -1,6 +1,6 @@
 {
   "name": "@sapientpro/nestjs-redis",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight Redis module for NestJS using ioredis and ready-to-inject Redis client.",
   "license": "MIT",
   "readmeFilename": "README.md",
